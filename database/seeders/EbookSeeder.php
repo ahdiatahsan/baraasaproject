@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Ebook;
 use Illuminate\Database\Seeder;
 
 class EbookSeeder extends Seeder
@@ -13,6 +14,6 @@ class EbookSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Ebook::factory()->count(3)->create();
     }
 }
