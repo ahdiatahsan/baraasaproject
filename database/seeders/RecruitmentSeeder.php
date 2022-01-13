@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Recruitment;
 use Illuminate\Database\Seeder;
 
 class RecruitmentSeeder extends Seeder
@@ -13,6 +14,6 @@ class RecruitmentSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Recruitment::factory()->count(3)->create();
     }
 }

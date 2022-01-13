@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Thread;
 use Illuminate\Database\Seeder;
 
 class ThreadSeeder extends Seeder
@@ -13,6 +14,6 @@ class ThreadSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Thread::factory()->count(3)->create();
     }
 }

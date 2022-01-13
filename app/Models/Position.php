@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Position extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'division_id'
+    ];
+
+    public function division()
+    {
+        return $this->belongsTo(Division::class);
+    }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }
