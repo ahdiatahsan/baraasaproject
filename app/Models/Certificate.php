@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Certificate extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'file',
+        'participant_id'
+    ];
+
+    public function participant()
+    {
+        return $this->belongsTo(Participant::class);
+    }
 }

@@ -8,4 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'slug',
+        'body',
+        'date_of_event',
+        'location',
+        'thumbnail',
+        'event_status',
+        'user_id'
+    ];
+
+    public function participants()
+    {
+        return $this->hasMany(Participant::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
