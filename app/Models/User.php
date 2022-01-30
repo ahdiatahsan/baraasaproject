@@ -79,9 +79,9 @@ class User extends Authenticatable
         return $this->hasMany(Participant::class);
     }
 
-    public function ebooks()
+    public function researches()
     {
-        return $this->hasMany(Ebook::class);
+        return $this->hasMany(Research::class);
     }
 
     public function recruitments()
