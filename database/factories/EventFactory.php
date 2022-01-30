@@ -27,7 +27,8 @@ class EventFactory extends Factory
             'slug' => $this->faker->slug,
             'body' => $this->faker->sentence,
             'thumbnail' => $this->faker->word,
-            'date_of_event' => $this->faker->date,
+            'date_start' => $this->faker->date,
+            'date_end' => $this->faker->date,
             'location' => $this->faker->city,
             'event_status' => $this->faker->boolean(),
             'user_id' => User::inRandomOrder()->first()

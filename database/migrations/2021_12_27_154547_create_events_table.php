@@ -19,7 +19,8 @@ class CreateEventsTable extends Migration
             $table->string('slug', 300)->unique();
             $table->text('body');
             $table->string('thumbnail');
-            $table->date('date_of_event');
+            $table->date('date_start');
+            $table->date('date_end');
             $table->string('location');
             $table->boolean('event_status');
             $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate();
