@@ -41,10 +41,10 @@ class UserSeeder extends Seeder
             'post-update',
             'post-delete',
 
-            'ebook-view',
-            'ebook-create',
-            'ebook-update',
-            'ebook-delete',
+            'research-view',
+            'research-create',
+            'research-update',
+            'research-delete',
 
             'thread-view',
             'thread-create',
@@ -66,10 +66,35 @@ class UserSeeder extends Seeder
             'participant-update',
             'participant-delete',
 
+            'certicate-view',
+            'certicate-create',
+            'certicate-update',
+            'certicate-delete',
+
             'recruitment-view',
             'recruitment-create',
             'recruitment-update',
             'recruitment-delete',
+
+            'team-view',
+            'team-create',
+            'team-update',
+            'team-delete',
+
+            'general-view',
+            'general-create',
+            'general-update',
+            'general-delete',
+
+            'admin-view',
+            'admin-create',
+            'admin-update',
+            'admin-delete',
+
+            'profile-view',
+            'profile-create',
+            'profile-update',
+            'profile-delete',
 
             'setting-view',
             'setting-create',
@@ -103,10 +128,10 @@ class UserSeeder extends Seeder
             'post-update',
             'post-delete',
 
-            'ebook-view',
-            'ebook-create',
-            'ebook-update',
-            'ebook-delete',
+            'research-view',
+            'research-create',
+            'research-update',
+            'research-delete',
 
             'thread-view',
             'thread-create',
@@ -128,10 +153,35 @@ class UserSeeder extends Seeder
             'participant-update',
             'participant-delete',
 
+            'certicate-view',
+            'certicate-create',
+            'certicate-update',
+            'certicate-delete',
+
             'recruitment-view',
             'recruitment-create',
             'recruitment-update',
             'recruitment-delete',
+
+            'team-view',
+            'team-create',
+            'team-update',
+            'team-delete',
+
+            'general-view',
+            'general-create',
+            'general-update',
+            'general-delete',
+
+            'admin-view',
+            'admin-create',
+            'admin-update',
+            'admin-delete',
+
+            'profile-view',
+            'profile-create',
+            'profile-update',
+            'profile-delete',
 
             'setting-view',
             'setting-create',
@@ -157,6 +207,11 @@ class UserSeeder extends Seeder
             'comment-create',
             'comment-update',
             'comment-delete',
+
+            'profile-view',
+            'profile-create',
+            'profile-update',
+            'profile-delete',
         ]);
 
         # Create users
