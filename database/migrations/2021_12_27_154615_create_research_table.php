@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEbooksTable extends Migration
+class CreateResearchTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateEbooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('ebooks', function (Blueprint $table) {
+        Schema::create('research', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('thumbnail');
+            $table->date('date_of_publish');
             $table->string('file');
             $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate();
             $table->timestamps();
@@ -30,6 +30,6 @@ class CreateEbooksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ebooks');
+        Schema::dropIfExists('research');
     }
 }

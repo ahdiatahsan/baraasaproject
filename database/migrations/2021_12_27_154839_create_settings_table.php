@@ -20,8 +20,8 @@ class CreateSettingsTable extends Migration
             $table->string('address');
             $table->string('instagram');
             $table->string('spotify');
-            $table->string('anchor');
             $table->string('recruitment_status');
+            $table->string('recruitment_thumbnail');
             $table->timestamps();
         });
     }

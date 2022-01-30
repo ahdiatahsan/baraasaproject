@@ -11,8 +11,8 @@ class Recruitment extends Model
 
     protected $fillable = [
         'file',
-        'first_stage',
-        'second_stage',
+        'document_status',
+        'interview_status',
         'user_id'
     ];
 

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ebook;
-use App\Http\Requests\StoreEbookRequest;
-use App\Http\Requests\UpdateEbookRequest;
+use App\Models\Research;
+use App\Http\Requests\StoreResearchRequest;
+use App\Http\Requests\UpdateResearchRequest;
 
-class EbookController extends Controller
+class ResearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class EbookController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreEbookRequest  $request
+     * @param  \App\Http\Requests\StoreResearchRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEbookRequest $request)
+    public function store(StoreResearchRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class EbookController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Ebook  $ebook
+     * @param  \App\Models\Research  $research
      * @return \Illuminate\Http\Response
      */
-    public function show(Ebook $ebook)
+    public function show(Research $research)
     {
         //
     }
@@ -53,10 +53,10 @@ class EbookController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Ebook  $ebook
+     * @param  \App\Models\Research  $research
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ebook $ebook)
+    public function edit(Research $research)
     {
         //
     }
@@ -64,11 +64,11 @@ class EbookController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateEbookRequest  $request
-     * @param  \App\Models\Ebook  $ebook
+     * @param  \App\Http\Requests\UpdateResearchRequest  $request
+     * @param  \App\Models\Research  $research
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEbookRequest $request, Ebook $ebook)
+    public function update(UpdateResearchRequest $request, Research $research)
     {
         //
     }
@@ -76,10 +76,10 @@ class EbookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Ebook  $ebook
+     * @param  \App\Models\Research  $research
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ebook $ebook)
+    public function destroy(Research $research)
     {
         //
     }

@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Ebook;
+use App\Models\Research;
 use Illuminate\Database\Seeder;
 
-class EbookSeeder extends Seeder
+class ResearchSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class EbookSeeder extends Seeder
      */
     public function run()
     {
-        Ebook::factory()->count(3)->create();
+        Research::factory()->count(3)->create();
     }
 }
