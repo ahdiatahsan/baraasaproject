@@ -165,18 +165,11 @@ class UserSeeder extends Seeder
 
             'team-view',
             'team-create',
-            'team-update',
-            'team-delete',
 
             'general-view',
             'general-create',
             'general-update',
             'general-delete',
-
-            'admin-view',
-            'admin-create',
-            'admin-update',
-            'admin-delete',
 
             'profile-view',
             'profile-create',
