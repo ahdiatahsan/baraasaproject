@@ -16,7 +16,7 @@ class CreatePositionsTable extends Migration
         Schema::create('positions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('division_id')->constrained('divisions')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->string('title');
+            $table->string('name');
             $table->timestamps();
         });
     }
