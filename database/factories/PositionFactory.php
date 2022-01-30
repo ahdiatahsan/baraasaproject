@@ -23,7 +23,7 @@ class PositionFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->jobTitle,
+            'name' => $this->faker->jobTitle,
             'division_id' => Division::inRandomOrder()->first()
         ];
     }
