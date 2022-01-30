@@ -24,8 +24,8 @@ class RecruitmentFactory extends Factory
     {
         return [
             'file' => $this->faker->word,
-            'first_stage' => $this->faker->boolean(),
-            'second_stage' => $this->faker->boolean(),
+            'document_status' => $this->faker->boolean(),
+            'interview_status' => $this->faker->boolean(),
             'user_id' => User::inRandomOrder()->first()
         ];
     }

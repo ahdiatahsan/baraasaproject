@@ -17,8 +17,8 @@ class CreateRecruitmentsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('file');
-            $table->boolean('first_stage');
-            $table->boolean('second_stage');
+            $table->boolean('document_status');
+            $table->boolean('interview_status');
             $table->timestamps();
         });
     }
