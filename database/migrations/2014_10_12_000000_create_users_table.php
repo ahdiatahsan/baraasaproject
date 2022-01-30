@@ -25,8 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->text('address')->nullable();
-            $table->foreignId('division_id')->constrained('divisions')->cascadeOnUpdate();
-            $table->foreignId('position_id')->constrained('positions')->cascadeOnUpdate();
+            $table->foreignId('division_id')->nullable()->constrained('divisions')->cascadeOnUpdate();
+            $table->foreignId('position_id')->nullable()->constrained('positions')->cascadeOnUpdate();
             $table->timestamps();
         });
     }
