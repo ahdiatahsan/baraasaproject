@@ -22,7 +22,7 @@ class DivisionFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->jobTitle
+            'name' => $this->faker->jobTitle
         ];
     }
 }
