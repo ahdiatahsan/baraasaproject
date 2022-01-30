@@ -15,7 +15,7 @@ class Setting extends Model
         'address',
         'instagram',
         'spotify',
-        'anchor',
-        'recruitment_status'
+        'recruitment_status',
+        'recruitment_thumbnail'
     ];
 }
