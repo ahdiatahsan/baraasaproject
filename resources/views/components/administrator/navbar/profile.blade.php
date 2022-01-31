@@ -9,9 +9,9 @@
 
                 <div class="symbol symbol-30px symbol-md-40px">
                     @if (Storage::exists('public/user/' . Auth::user()->photo))
-                    <img alt="Profile Photo" src="{{ Storage::url('public/user/' . Auth::user()->photo) }}" />
+                    <img alt="img" src="{{ Storage::url('public/user/' . Auth::user()->photo) }}" />
                     @else
-                    <img alt="Profile Photo" src="{{ asset('media/avatar/blank.png') }}" />
+                    <img alt="img" src="{{ asset('media/avatars/blank.png') }}" />
                     @endif
                 </div>
             </div>
@@ -22,9 +22,9 @@
 
                         <div class="symbol symbol-50px me-5">
                             @if (Storage::exists('public/user/' . Auth::user()->photo))
-                            <img alt="Profile Photo" src="{{ Storage::url('public/user/' . Auth::user()->photo) }}" />
+                            <img alt="img" src="{{ Storage::url('public/user/' . Auth::user()->photo) }}" />
                             @else
-                            <img alt="Profile Photo" src="{{ asset('media/avatar/blank.png') }}" />
+                            <img alt="img" src="{{ asset('media/avatars/blank.png') }}" />
                             @endif
                         </div>
 
