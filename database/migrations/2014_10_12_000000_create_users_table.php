@@ -19,12 +19,13 @@ class CreateUsersTable extends Migration
             $table->enum('gender', ['L', 'P']);
             $table->string('birthplace')->nullable();
             $table->date('date_of_birth')->nullable();
+            $table->text('address')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->text('address')->nullable();
+            $table->string('photo')->nullable();
             $table->foreignId('division_id')->nullable()->constrained('divisions')->cascadeOnUpdate();
             $table->foreignId('position_id')->nullable()->constrained('positions')->cascadeOnUpdate();
             $table->timestamps();
