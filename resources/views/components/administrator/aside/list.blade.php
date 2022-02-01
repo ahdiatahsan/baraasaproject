@@ -30,7 +30,7 @@
             </div>
 
             {{-- Start::Blog --}}
-            <x-administrator.aside.single_menu linkClass="{{ $postMenu }}" title="Blog" url="{{ route('post.index') }}">
+            <x-administrator.aside.single_menu linkClass="{{ $blogMenu }}" title="Blog" url="{{ route('blog.index') }}">
                 <x-slot name="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path opacity="0.3" d="M16.163 17.55C17.0515 16.6633 17.6785 15.5488 17.975 14.329C18.2389 13.1884 18.8119 12.1425 19.631 11.306L12.694 4.36902C11.8574 5.18796 10.8115 5.76088 9.67099 6.02502C8.15617 6.3947 6.81277 7.27001 5.86261 8.50635C4.91245 9.74268 4.41238 11.266 4.44501 12.825C4.46196 13.6211 4.31769 14.4125 4.0209 15.1515C3.72412 15.8905 3.28092 16.5617 2.71799 17.125L2.28699 17.556C2.10306 17.7402 1.99976 17.9897 1.99976 18.25C1.99976 18.5103 2.10306 18.7598 2.28699 18.944L5.06201 21.719C5.24614 21.9029 5.49575 22.0062 5.75601 22.0062C6.01627 22.0062 6.26588 21.9029 6.45001 21.719L6.88101 21.288C7.44427 20.725 8.11556 20.2819 8.85452 19.9851C9.59349 19.6883 10.3848 19.5441 11.181 19.561C12.1042 19.58 13.0217 19.4114 13.878 19.0658C14.7343 18.7201 15.5116 18.2046 16.163 17.55Z" fill="black" />
@@ -200,7 +200,7 @@
 
             @hasrole('super_administrator')
             {{-- Start::Administrator --}}
-            <x-administrator.aside.single_menu linkClass="{{ $administratorMenu }}" title="Administrator" url="{{ route('user.index') }}">
+            <x-administrator.aside.single_menu linkClass="{{ $administratorMenu }}" title="Administrator" url="{{ route('administrator.index') }}">
                 <x-slot name="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path opacity="0.3" d="M21 10.7192H3C2.4 10.7192 2 11.1192 2 11.7192C2 12.3192 2.4 12.7192 3 12.7192H6V14.7192C6 18.0192 8.7 20.7192 12 20.7192C15.3 20.7192 18 18.0192 18 14.7192V12.7192H21C21.6 12.7192 22 12.3192 22 11.7192C22 11.1192 21.6 10.7192 21 10.7192Z" fill="black" />
@@ -232,6 +232,14 @@
             </x-slot>
             </x-administrator.aside.single_menu> --}}
             {{-- End::Notifikasi --}}
+
+            {{-- Start::Separator --}}
+            <div class="menu-item">
+                <div class="menu-content">
+                    <div class="separator mx-1 my-4"></div>
+                </div>
+            </div>
+            {{-- End::Separator --}}
             @endhasrole
             <!-- End::Data Pengaturan -->
         </div>
