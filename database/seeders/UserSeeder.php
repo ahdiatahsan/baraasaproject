@@ -76,10 +76,10 @@ class UserSeeder extends Seeder
             'recruitment-update',
             'recruitment-delete',
 
-            'team-view',
-            'team-create',
-            'team-update',
-            'team-delete',
+            'member-view',
+            'member-create',
+            'member-update',
+            'member-delete',
 
             'general-view',
             'general-create',
@@ -95,6 +95,11 @@ class UserSeeder extends Seeder
             'profile-create',
             'profile-update',
             'profile-delete',
+
+            // 'notification-view',
+            // 'notification-create',
+            // 'notification-update',
+            // 'notification-delete',
 
             'setting-view',
             'setting-create',
@@ -163,8 +168,8 @@ class UserSeeder extends Seeder
             'recruitment-update',
             'recruitment-delete',
 
-            'team-view',
-            'team-create',
+            'member-view',
+            'member-create',
 
             'general-view',
             'general-create',
@@ -176,10 +181,59 @@ class UserSeeder extends Seeder
             'profile-update',
             'profile-delete',
 
+            // 'notification-view',
+            // 'notification-create',
+            // 'notification-update',
+            // 'notification-delete',
+
             'setting-view',
             'setting-create',
             'setting-update',
             'setting-delete',
+        ]);
+
+        $roleMember = PermissionRole::create(['name' => 'member']);
+        $roleMember->syncPermissions([
+            'dashboard-view',
+
+            'division-view',
+
+            'position-view',
+
+            'post-view',
+            'post-create',
+            'post-update',
+            'post-delete',
+
+            'thread-view',
+            'thread-create',
+            'thread-update',
+            'thread-delete',
+
+            'comment-view',
+            'comment-create',
+            'comment-update',
+            'comment-delete',
+
+            'research-view',
+
+            'event-view',
+
+            'participant-view',
+
+            'certicate-view',
+
+            'recruitment-view',
+
+            'member-view',
+
+            'general-view',
+
+            'profile-view',
+            'profile-create',
+            'profile-update',
+            'profile-delete',
+
         ]);
 
         $roleGeneral = PermissionRole::create(['name' => 'general']);
@@ -218,7 +272,7 @@ class UserSeeder extends Seeder
             'email' => 'superadmin@mail.com',
             'password' => Hash::make('password'),
             'address' => null,
-            
+
             'division_id' => null,
             'position_id' => null,
         ]);
@@ -233,7 +287,22 @@ class UserSeeder extends Seeder
             'email' => 'admin@mail.com',
             'password' => Hash::make('password'),
             'address' => null,
-            
+
+            'division_id' => null,
+            'position_id' => null,
+        ]);
+
+        $userMember = User::factory()->create([
+            'name' => 'Member',
+            'gender' => 'L',
+            'birthplace' => 'Localhost',
+            'date_of_birth' => now(),
+
+            'phone_number' => null,
+            'email' => 'member@mail.com',
+            'password' => Hash::make('password'),
+            'address' => null,
+
             'division_id' => null,
             'position_id' => null,
         ]);
@@ -248,7 +317,7 @@ class UserSeeder extends Seeder
             'email' => 'general@mail.com',
             'password' => Hash::make('password'),
             'address' => null,
-            
+
             'division_id' => null,
             'position_id' => null
         ]);
@@ -256,7 +325,7 @@ class UserSeeder extends Seeder
         # Assign roles
         $userSuperadministrator->assignRole($roleSuperadministrator);
         $userAdministrator->assignRole($roleAdministrator);
+        $userMember->assignRole($roleMember);
         $userGeneral->assignRole($roleGeneral);
-
     }
 }
