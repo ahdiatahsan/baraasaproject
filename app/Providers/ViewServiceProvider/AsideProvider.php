@@ -24,7 +24,7 @@ class AsideProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['components.administrator.aside.list'], function ($view) {
+        View::composer(['components.dashboard.aside.list'], function ($view) {
             # Beranda
             $home = request()->routeIs('home') ?
                 [
