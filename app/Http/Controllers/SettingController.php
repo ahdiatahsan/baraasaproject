@@ -63,7 +63,7 @@ class SettingController extends Controller
      */
     public function edit(Setting $setting)
     {
-        return view('administrator.setting.edit', compact('setting'));
+        return view('dashboard.setting.edit', compact('setting'));
     }
 
     /**
