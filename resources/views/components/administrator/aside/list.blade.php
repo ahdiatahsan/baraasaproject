@@ -5,7 +5,7 @@
         <div class="menu menu-column menu-active-bg menu-hover-bg menu-title-gray-700 fs-6 menu-rounded w-100" id="#kt_aside_menu" data-kt-menu="true">
             <!-- Start::Dashboard -->
             <div class="menu-item">
-                <a href="{{ route('dashboard') }}" class="menu-link {{ $dashboard['link'] }}">
+                <a href="{{ route('home') }}" class="menu-link {{ $home['link'] }}">
                     <span class="menu-icon">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                         <span class="svg-icon svg-icon-2">
@@ -16,7 +16,7 @@
                         </span>
                         <!--end::Svg Icon-->
                     </span>
-                    <span class="menu-title">Dasbor</span>
+                    <span class="menu-title">Beranda</span>
                 </a>
             </div>
             <!-- End::Dashboard -->
