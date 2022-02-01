@@ -32,7 +32,7 @@
                                 </svg>
                             </span>
                         </div>
-                        <a href="{{ route('dashboard') }}">
+                        <a href="{{ route('home') }}">
                             <img alt="Logo" src="{{ asset('media/logos/headerlogo.png') }}" class="d-none d-lg-inline h-60px" />
                             <img alt="Logo" src="{{ asset('media/logos/headerlogo.png') }}" class="d-lg-none h-25px" />
                         </a>
