@@ -36,8 +36,10 @@
                             <span class="badge badge-light-primary fw-bolder fs-7">Super Administrator</span>
                             @elseif (Auth::user()->hasRole('administrator'))
                             <span class="badge badge-light-success fw-bolder fs-7">Administrator</span>
+                            @elseif (Auth::user()->hasRole('member'))
+                            <span class="badge badge-light-warning fw-bolder fs-7">Member</span>
                             @elseif (Auth::user()->hasRole('general'))
-                            <span class="badge badge-light-warning fw-bolder fs-7">Umum</span>
+                            <span class="badge badge-light-danger fw-bolder fs-7">Umum</span>
                             @endif
                         </div>
 
