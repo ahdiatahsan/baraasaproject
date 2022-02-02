@@ -20,7 +20,7 @@ class CreateParticipantsTable extends Migration
             $table->text('reason');
             $table->string('file');
             $table->boolean('data_status');
-            $table->string('certificate');
+            $table->string('certificate')->nullable();
             $table->timestamps();
         });
     }
