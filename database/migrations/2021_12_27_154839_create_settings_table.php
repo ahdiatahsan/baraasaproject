@@ -21,7 +21,7 @@ class CreateSettingsTable extends Migration
             $table->string('instagram');
             $table->string('spotify');
             $table->string('recruitment_status');
-            $table->string('recruitment_thumbnail');
+            $table->string('recruitment_thumbnail')->nullable();
             $table->timestamps();
         });
     }
