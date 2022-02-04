@@ -414,7 +414,6 @@
     
             $(document).ready(function () {
                 $('#datatable').DataTable({
-                    responsive: true,
                     processing: true,
                     serverSide: true,
                     ajax: "{{ route('profile.datatable') }}",
