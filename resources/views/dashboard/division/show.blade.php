@@ -134,8 +134,8 @@
                     confirmButtonText: 'Ya, Hapus!'
                 }).then(function (result) {
                     if (result.value) {
-                        var url = '{{ route("division.destroy", ":division") }}';
-                        url = url.replace(':division', id);
+                        var url = '{{ route("position.destroy", ":position") }}';
+                        url = url.replace(':position', id);
         
                         $.ajax({
                             headers: {
