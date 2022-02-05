@@ -43,7 +43,7 @@
                 @method('PATCH')
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title fs-3 fw-bolder">Tambah Divisi</div>
+                        <div class="card-title fs-3 fw-bolder">Ubah Divisi</div>
                         <div class="card-toolbar">
                             <a class="btn btn-sm btn-light-primary fw-bolder" href="{{ route('division.index') }}">
                                 <i class="fa fa-arrow-left"></i>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="card-body">
                         <div>
-                            <label class="form-label required">Nama Divisi</label>
+                            <label class="form-label">Nama Divisi</label>
                             <input class="form-control" type="text" name="name" value="{{ $division->name }}" required>
                         </div>
                     </div>
