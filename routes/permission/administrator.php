@@ -73,6 +73,8 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
 
     # Posisi
     Route::resource('position', PositionController::class);
+    Route::get('position-datatable', [PositionController::class, 'datatable'])->name('position.datatable');
+    Route::get('position-select2-division', [PositionController::class, 'select2_division'])->name('position.select2-division');
 
     # Umum
     Route::resource('general', GeneralController::class);
