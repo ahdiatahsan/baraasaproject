@@ -124,9 +124,9 @@ class DivisionController extends Controller
      */
     public function position($division)
     {
-        $division_id = Division::where('id', '=', $division)->get();
+        $divisionGet = Division::where('id', '=', $division)->first();
 
-        return view('dashboard.position.create', compact('division_id'));
+        return view('dashboard.division.position', compact('divisionGet'));
     }
 
     /**
