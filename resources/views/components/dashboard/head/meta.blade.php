@@ -7,3 +7,4 @@
 <meta property="og:title" content="Platform Non-Profit Untuk Pengembangan Diri Anak Muda Di Kota Palu" />
 <meta property="og:url" content="baraasaproject.id" />
 <meta property="og:site_name" content="Bara Asa Project" />
+<meta name="csrf-token" content="{{ csrf_token() }}">
