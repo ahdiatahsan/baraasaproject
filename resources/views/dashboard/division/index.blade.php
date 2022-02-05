@@ -122,52 +122,47 @@
         {{-- Start::Datatable --}}
         <script src="{{ asset('plugins/custom/datatables/datatables.bundle.js') }}"></script>
         <script>
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('#datatable').DataTable({
                     responsive: true,
-                    processing: true
-                    , serverSide: true
-                    , ajax: "{{ route('division.datatable') }}"
-                    , columns: [{
-                            data: 'DT_RowIndex'
-                            , name: 'DT_RowIndex'
-                        }
-                        , {
-                            data: 'name'
-                            , name: 'name'
-                        }
-                        , {
-                            data: 'action'
-                            , name: 'action'
-                        }
-                    ]
-                    , columnDefs: [{
-                            className: 'text-center'
-                            , targets: [0]
-                        }
-                        , {
-                            className: 'text-center overflow-visible'
-                            , orderable: false
-                            , targets: [2]
-                        }
-                    ]
-                    , pagingType: "full_numbers"
-                    , "language": {
-                        "search": "Cari:"
-                        , "emptyTable": "Tidak ada data yang tersedia pada tabel ini"
-                        , "info": "Menampilkan _START_ - _END_ dari _TOTAL_ data"
-                        , "infoEmpty": "Tidak menampilkan data apapun"
-                        , "loadingRecords": "Memuat..."
-                        , "processing": "Memproses..."
-                        , "zeroRecords": "Tidak ada data yang cocok ditemukan"
-                    , }
-                    , dom: "<'row'" +
+                    processing: true,
+                    serverSide: true,
+                    ajax: "{{ route('division.datatable') }}",
+                    columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex'
+                    }, {
+                        data: 'name',
+                        name: 'name'
+                    }, {
+                        data: 'action',
+                        name: 'action'
+                    }],
+                    columnDefs: [{
+                        className: 'text-center',
+                        targets: [0]
+                    }, {
+                        className: 'text-center overflow-visible',
+                        orderable: false,
+                        targets: [2]
+                    }],
+                    pagingType: "full_numbers",
+                    "language": {
+                        "search": "Cari:",
+                        "emptyTable": "Tidak ada data yang tersedia pada tabel ini",
+                        "info": "Menampilkan _START_ - _END_ dari _TOTAL_ data",
+                        "infoEmpty": "Tidak menampilkan data apapun",
+                        "loadingRecords": "Memuat...",
+                        "processing": "Memproses...",
+                        "zeroRecords": "Tidak ada data yang cocok ditemukan",
+                    },
+                    dom: "<'row'" +
                         "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
                         "<'col-sm-6 d-flex align-items-center justify-content-end z-0'f>" +
                         ">" +
-
+        
                         "<'table-responsive overflow-visible'tr>" +
-
+        
                         "<'row'" +
                         "<'col-sm-6 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
                         "<'col-sm-6 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +

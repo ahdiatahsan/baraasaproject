@@ -422,13 +422,20 @@
                     processing: true,
                     serverSide: true,
                     ajax: "{{ route('profile.datatable') }}",
-                    columns: [
-                        { data: 'DT_RowIndex', name: 'DT_RowIndex' },
-                        { data: 'event.title', name: 'event.title' },
-                        { data: 'action', name: 'action' }
-                    ],
-                    columnDefs: [
+                    columns: [{
+                            data: 'DT_RowIndex',
+                            name: 'DT_RowIndex'
+                        },
                         {
+                            data: 'event.title',
+                            name: 'event.title'
+                        },
+                        {
+                            data: 'action',
+                            name: 'action'
+                        }
+                    ],
+                    columnDefs: [{
                             className: 'text-center',
                             targets: [0]
                         },
@@ -453,7 +460,7 @@
                         "zeroRecords": "Tidak ada data yang cocok ditemukan",
                     },
                     dom: "<'table-responsive'tr>" +
-    
+        
                         "<'row'" +
                         "<'d-flex align-items-center justify-content-center'p>" +
                         ">"
