@@ -403,7 +403,7 @@
 
     {{-- Start::Javascript --}}
     <x-slot name="javascript">
-        <script src="{{ asset('plugins/custom/datatables/datatables.bundle.js') }}"></script>
+        {{-- Start::Flatpickr --}}
         <script src="https://npmcdn.com/flatpickr/dist/l10n/id.js"></script>
         <script>
             $(".flatpickr").flatpickr({
@@ -411,7 +411,12 @@
                 locale: "id",
                 altFormat: "d F Y",
             });
-    
+        </script>
+        {{-- End::Flatpickr --}}
+
+        {{-- Start::Datatable --}}
+        <script src="{{ asset('plugins/custom/datatables/datatables.bundle.js') }}"></script>
+        <script>
             $(document).ready(function () {
                 $('#datatable').DataTable({
                     processing: true,
@@ -455,6 +460,7 @@
                 });
             });
         </script>
+        {{-- End::Datatable --}}
     </x-slot>
     {{-- End::Javascript --}}
 </x-dashboard.layout>
