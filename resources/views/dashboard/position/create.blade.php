@@ -37,45 +37,43 @@
         {{-- End::Alert Component --}}
 
         {{-- Start::Content --}}
-        <div class="post" id="kt_post">
-            <form class="form" action="{{ route('position.store')}}" method="POST" autocomplete="off">
-                @csrf
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title fs-3 fw-bolder">Tambah Posisi</div>
-                        <div class="card-toolbar">
-                            <a class="btn btn-sm btn-light-primary fw-bolder" href="{{ route('position.index') }}">
-                                <i class="fa fa-arrow-left"></i>
-                                Kembali
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-6">
-                            <label class="form-label required">Nama Divisi</label>
-                            <select class="form-select" name="division_id" id="select2Division"
-                                data-placeholder="Cari Nama Divisi" data-allow-clear="true" required>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="form-label required">Nama Posisi</label>
-                            <input class="form-control" type="text" name="name" value="{{ old('name') }}" required>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-end py-6">
-                        <button type="submit" class="btn btn-sm btn-primary">
-                            <span class="svg-icon svg-icon-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
-                                        transform="rotate(-90 11.364 20.364)" fill="black" />
-                                    <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
-                                </svg>
-                            </span> Tambah Posisi</button>
+        <form class="form" action="{{ route('position.store')}}" method="POST" autocomplete="off">
+            @csrf
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title fs-3 fw-bolder">Tambah Posisi</div>
+                    <div class="card-toolbar">
+                        <a class="btn btn-sm btn-light-primary fw-bolder" href="{{ route('position.index') }}">
+                            <i class="fa fa-arrow-left"></i>
+                            Kembali
+                        </a>
                     </div>
                 </div>
-            </form>
-        </div>
+                <div class="card-body">
+                    <div class="mb-6">
+                        <label class="form-label required">Nama Divisi</label>
+                        <select class="form-select" name="division_id" id="select2Division"
+                            data-placeholder="Cari Nama Divisi" data-allow-clear="true" required>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label required">Nama Posisi</label>
+                        <input class="form-control" type="text" name="name" value="{{ old('name') }}" required>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-end py-6">
+                    <button type="submit" class="btn btn-sm btn-primary">
+                        <span class="svg-icon svg-icon-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
+                                    transform="rotate(-90 11.364 20.364)" fill="black" />
+                                <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
+                            </svg>
+                        </span> Tambah Posisi</button>
+                </div>
+            </div>
+        </form>
         {{-- End::Content --}}
     </x-slot>
     {{-- End::Post component --}}
