@@ -3,11 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Position;
-use App\Http\Requests\StorePositionRequest;
-use App\Http\Requests\UpdatePositionRequest;
+use App\Models\Division;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
+use Yajra\DataTables\DataTables;
 
 class PositionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['role:super_administrator|administrator|member']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,28 +23,32 @@ class PositionController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('dashboard.position.index');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePositionRequest  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePositionRequest $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'division_id' => 'required|string',
+            'name' => 'required|string|unique:positions,name',
+        ]);
+
+        Position::create([
+            'division_id' => $request->input('division_id'),
+            'name' => $request->input('name')
+        ]);
+
+        if (URL::previous() === URL::route('division.position', $request->input('division_id'))) {
+            return redirect()->route('division.position', $request->input('division_id'))->with('success', 'Posisi ' . $request->input('name') . ' telah ditambahkan.');
+        } else {
+            return redirect()->route('position.create')->with('success', 'Posisi ' . $request->input('name') . ' telah ditambahkan.');
+        }
     }
 
     /**
@@ -58,19 +70,28 @@ class PositionController extends Controller
      */
     public function edit(Position $position)
     {
-        //
+        return view('dashboard.position.edit', compact('position'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePositionRequest  $request
-     * @param  \App\Models\Position  $position
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Division  $division
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePositionRequest $request, Position $position)
+    public function update(Request $request, Position $position)
     {
-        //
+        $request->validate([
+            'division_id' => 'required|string',
+            'name' => 'required|string|unique:positions,name,' . $position->id,
+        ]);
+
+        $position->division_id = $request->input('division_id');
+        $position->name = $request->input('name');
+        $position->save();
+
+        return redirect()->route('position.edit', $position->id)->with('success', 'Posisi berhasil diubah.');
     }
 
     /**
@@ -81,6 +102,38 @@ class PositionController extends Controller
      */
     public function destroy(Position $position)
     {
-        //
+        Session::flash('success', 'Posisi ' . $position->name . ' telah dihapus.');
+
+        $position->delete();
+    }
+
+    /**
+     * Yajra datatable
+     */
+    public function datatable(Request $request)
+    {
+        if ($request->ajax()) {
+            $positions = Position::with('division')->get();
+
+            return DataTables::of($positions)
+                ->addColumn('action', function ($position) {
+                    return view('dashboard.position.action', compact('position'))->render();
+                })
+                ->addIndexColumn()
+                ->make(true);
+        }
+    }
+
+    public function select2_division(Request $request)
+    {
+        if ($request->ajax()) {
+            $q = $request->input('q');
+
+            $assets = Division::select('id', 'name')
+                ->where('name', 'LIKE', '%' . $q . '%')
+                ->get();
+
+            return response()->json($assets, 200);
+        }
     }
 }
