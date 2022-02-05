@@ -74,6 +74,52 @@
 
     {{-- Start::Javascript --}}
     <x-slot name="javascript">
+        {{-- Start::Sweetalert2 --}}
+        <script>
+            $(document).on('click', '.delete', function () {
+                var id = $(this).attr('id');
+                swal.fire({
+                    title: "Hapus data ini?",
+                    text: "Data yang terhapus tidak dapat dikembalikan.",
+                    type: "warning",
+                    showCloseButton: true,
+                    confirmButtonColor: '#f1416c',
+                    confirmButtonText: 'Ya, Hapus!'
+                }).then(function (result) {
+                    if (result.value) {
+                        var url = '{{ route("division.destroy", ":division") }}';
+                        url = url.replace(':division', id);
+        
+                        $.ajax({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                            },
+                            url: url,
+                            type: 'POST',
+                            datatype: 'json',
+                            data: {
+                                "_method": 'DELETE',
+                            },
+                            success: function (data) {
+                                setTimeout(function () {
+                                    location.reload()
+                                }, 1500);
+                            },
+                            complete: function () {
+                                swal.hideLoading();
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                swal.hideLoading();
+                                swal.fire("!Maaf ", "Terjadi kesalahan", "error");
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+        {{-- End::Sweetalert2 --}}
+
+        {{-- Start::Datatable --}}
         <script src="{{ asset('plugins/custom/datatables/datatables.bundle.js') }}"></script>
         <script>
             $(document).ready(function() {
@@ -129,48 +175,7 @@
                 });
             });
         </script>
-        <script>
-            $(document).on('click', '.delete', function () {
-            var id = $(this).attr('id');
-            swal.fire({
-                title: "Hapus data ini?",
-                text: "Data yang terhapus tidak dapat dikembalikan.",
-                type: "warning",
-                showCloseButton: true,
-                confirmButtonColor: '#f1416c',
-                confirmButtonText: 'Ya, Hapus!'
-            }).then(function (result) {
-                if (result.value) {
-                    var url = '{{ route("division.destroy", ":division") }}';
-                    url = url.replace(':division', id);
-        
-                    $.ajax({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        url: url,
-                        type: 'POST',
-                        datatype: 'json',
-                        data: {
-                            "_method": 'DELETE',
-                        },
-                        success: function (data) {
-                            setTimeout(function () {
-                                location.reload()
-                            }, 1500);
-                        },
-                        complete: function () {
-                            swal.hideLoading();
-                        },
-                        error: function (jqXHR, textStatus, errorThrown) {
-                            swal.hideLoading();
-                            swal.fire("!Maaf ", "Terjadi kesalahan", "error");
-                        }
-                    });
-                }
-            });
-        });
-        </script>
+        {{-- Start::Datatable --}}
     </x-slot>
     {{-- End::Javascript --}}
 </x-dashboard.layout>
