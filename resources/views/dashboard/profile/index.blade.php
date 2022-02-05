@@ -53,7 +53,7 @@
                                 @elseif (Auth::user()->hasRole('administrator'))
                                 <span class="badge badge-lg badge-light-success d-inline">Administrator</span>
                                 @elseif (Auth::user()->hasRole('member'))
-                                <span class="badge badge-lg badge-light-warning d-inline">Member</span>
+                                <span class="badge badge-lg badge-light-warning d-inline">Anggota</span>
                                 @elseif (Auth::user()->hasRole('general'))
                                 <span class="badge badge-lg badge-light-danger d-inline">Umum</span>
                                 @endif
