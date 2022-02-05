@@ -1,5 +1,5 @@
 @if ($message = Session::get('success'))
-<div class="alert alert-success d-flex align-items-center p-5 mb-10">
+<div class="alert alert-success d-flex align-items-center p-5 mb-5">
     <span class="svg-icon svg-icon-2hx svg-icon-success me-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
