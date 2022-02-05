@@ -68,6 +68,8 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
 
     # Divisi
     Route::resource('division', DivisionController::class);
+    Route::get('division-datatable', [DivisionController::class, 'datatable'])->name('division.datatable');
+    Route::get('division/{division}/position', [DivisionController::class, 'position'])->name('division.position');
 
     # Posisi
     Route::resource('position', PositionController::class);
