@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
     # Beranda
-    Route::get('home', [HomeController::class, 'index'])->name('home');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
     # Profil
     Route::get('profile/{user}', [ProfileController::class, 'index'])->name('profile.index');
