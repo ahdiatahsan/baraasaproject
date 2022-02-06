@@ -86,6 +86,7 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
     */
     # Administrator
     Route::resource('administrator', AdministratorController::class);
+    Route::get('administrator-datatable', [AdministratorController::class, 'datatable'])->name('administrator.datatable');
 
     # Aplikasi
     Route::resource('setting', SettingController::class)->only(['edit', 'update']);
