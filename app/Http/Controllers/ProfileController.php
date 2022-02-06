@@ -121,6 +121,7 @@ class ProfileController extends Controller
             ->addColumn('action', function ($participant) {
                 return view('dashboard.profile.action', compact('participant'))->render();
             })
+            ->rawColumns(['action'])
             ->addIndexColumn()
             ->make(true);
         }

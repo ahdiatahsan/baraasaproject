@@ -69,6 +69,7 @@ class DivisionController extends Controller
                 ->addColumn('action', function ($position) {
                     return view('dashboard.division.action_show', compact('position'))->render();
                 })
+                ->rawColumns(['action'])
                 ->addIndexColumn()
                 ->make(true);
         }
@@ -141,6 +142,7 @@ class DivisionController extends Controller
                 ->addColumn('action', function ($division) {
                     return view('dashboard.division.action', compact('division'))->render();
                 })
+                ->rawColumns(['action'])
                 ->addIndexColumn()
                 ->make(true);
         }

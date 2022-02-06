@@ -119,6 +119,7 @@ class PositionController extends Controller
                 ->addColumn('action', function ($position) {
                     return view('dashboard.position.action', compact('position'))->render();
                 })
+                ->rawColumns(['action'])
                 ->addIndexColumn()
                 ->make(true);
         }
