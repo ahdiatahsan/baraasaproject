@@ -101,7 +101,7 @@
                         className: 'text-center',
                         targets: [0]
                     }, {
-                        className: 'text-center',
+                        className: 'text-center mw-100px',
                         orderable: false,
                         targets: [5]
                     }],

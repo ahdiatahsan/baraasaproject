@@ -258,7 +258,7 @@
 
                             <div class="card-body p-9 pt-10">
                                 <table id="datatable"
-                                    class="table table-sm table-hover table-row-bordered gy-3 gs-2 border rounded dataTable">
+                                    class="table table-sm table-row-bordered gy-5 gs-8 border rounded no-footer nowrap dataTable">
                                     <thead>
                                         <tr class="border-gray-200 fw-bold bg-lighten fs-6 ">
                                             <th>No.</th>
@@ -444,7 +444,7 @@
                             targets: [1]
                         },
                         {
-                            className: 'text-center',
+                            className: 'text-center mw-100px',
                             orderable: false,
                             targets: [2]
                         }

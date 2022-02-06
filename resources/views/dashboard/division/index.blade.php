@@ -57,7 +57,8 @@
             </div>
 
             <div class="card-body p-lg-8">
-                <table id="datatable" class="table table-sm table-hover table-row-bordered gy-3 gs-6 border rounded">
+                <table id="datatable"
+                    class="table table-sm table-row-bordered gy-5 gs-8 border rounded no-footer nowrap dataTable">
                     <thead>
                         <tr class="border-gray-200 fw-bold bg-lighten fs-6 ">
                             <th>No.</th>
@@ -124,7 +125,6 @@
         <script>
             $(document).ready(function () {
                 $('#datatable').DataTable({
-                    responsive: true,
                     processing: true,
                     serverSide: true,
                     ajax: "{{ route('division.datatable') }}",
@@ -142,7 +142,7 @@
                         className: 'text-center',
                         targets: [0]
                     }, {
-                        className: 'text-center overflow-visible',
+                        className: 'text-center mw-100px',
                         orderable: false,
                         targets: [2]
                     }],
@@ -161,7 +161,7 @@
                         "<'col-sm-6 d-flex align-items-center justify-content-end z-0'f>" +
                         ">" +
         
-                        "<'table-responsive overflow-visible'tr>" +
+                        "<'table-responsive'tr>" +
         
                         "<'row'" +
                         "<'col-sm-6 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
