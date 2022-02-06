@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center">
-  <div class="ms-2">
-    <a class="btn btn-sm btn-icon btn-light-success btn-active-light-dark" data-bs-toggle="tooltip" title="Rincian"
+  <div class="ms-4 ms-sm-2">
+    <a class="btn btn-sm btn-icon btn-light-warning btn-active-light-dark" data-bs-toggle="tooltip" title="Rincian"
       href="{{ route('member.show', $administrator->id) }}">
       <span class="svg-icon svg-icon-5 m-0">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
