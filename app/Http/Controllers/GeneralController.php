@@ -132,12 +132,6 @@ class GeneralController extends Controller
     {
         $this->validate_request($request);
         $request->validate([
-            'name' => 'required|string|max:255',
-            'gender' => 'required|in:L,P',
-            'birthplace' => 'required|string|max:255',
-            'date_of_birth' => 'required|date',
-            'address' => 'required|string|max:255',
-            'phone_number' => 'nullable|string|max:255',
             'email' => 'required|email|unique:users,email,' . $general->id,
             'password' => 'nullable|string|min:8|max:255',
             'password_confirm' => 'same:password',
