@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Comment;
-use App\Models\Event;
 use App\Models\Participant;
 use App\Models\Thread;
 use App\Models\User;
@@ -13,7 +12,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Validation\Rule;
 use Yajra\DataTables\DataTables;
 
 class ProfileController extends Controller
@@ -31,7 +29,7 @@ class ProfileController extends Controller
             'blog' => Blog::select('id')->where('user_id', '=', $user->id)->count(),
             'thread' => Thread::select('id')->where('user_id', '=', $user->id)->count(),
             'comment' =>  Comment::select('id')->where('user_id', '=', $user->id)->count(),
-            'participant' => Event::select('id')->where('user_id', '=', $user->id)->count()
+            'participant' => Participant::select('id')->where('user_id', '=', $user->id)->count()
         ];
 
         // Tanggal Lahir //
@@ -48,18 +46,18 @@ class ProfileController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'gender' => ['required', Rule::in('L', 'P')],
-            'birthplace' => ['nullable', 'string', 'max:255'],
-            'date_of_birth' => ['nullable', 'date'],
-            'address' => ['nullable', 'string'],
-            'phone_number' => ['nullable', 'string'],
-            'email' => ['nullable', 'email', Rule::unique('users', 'email')->ignore($user->id)],
+            'name' => 'required|string|max:255',
+            'gender' => 'required|in:L,P',
+            'birthplace' => 'required|string|max:255',
+            'date_of_birth' => 'required|date',
+            'address' => 'required|string|max:255',
+            'phone_number' => 'nullable|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $user->id
         ]);
 
         if ($request->file() != null) {
             $request->validate([
-                'photo' => 'required|file|max:2000|mimes:jpeg,jpg,png'
+                'photo' => 'required|file|max:2000|mimes:jpeg,jpg,png,webp'
             ]);
 
             if (Storage::exists('public/user/' . $user->photo)) {

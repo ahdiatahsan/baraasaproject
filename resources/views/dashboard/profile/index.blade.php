@@ -39,7 +39,7 @@
                     <div class="card-body">
 
                         <div class="d-flex flex-center flex-column py-5">
-                            <div class="symbol symbol-100px symbol-circle mb-7">
+                            <div class="symbol symbol-100px symbol-circle border mb-7">
                                 @if (Storage::exists('public/user/' . Auth::user()->photo))
                                 <img alt="img" src="{{ Storage::url('public/user/' . Auth::user()->photo) }}" />
                                 @else
