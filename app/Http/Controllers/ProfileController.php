@@ -57,7 +57,7 @@ class ProfileController extends Controller
 
         if ($request->file() != null) {
             $request->validate([
-                'photo' => 'required|file|max:2000|mimes:jpeg,jpg,png,webp'
+                'photo' => 'required|file|max:2048|mimes:jpeg,jpg,png,webp'
             ]);
 
             if (Storage::exists('public/user/' . $user->photo)) {
