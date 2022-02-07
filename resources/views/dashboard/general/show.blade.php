@@ -110,16 +110,9 @@
                 </div>
             </div>
 
-            <div class="separator separator-dashed mb-5"></div>
+            <div class="separator separator-dashed mb-10"></div>
 
             <div class="flex-lg-row-fluid ms-lg-15">
-                <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-6 fw-bold mb-8">
-                    <li class="nav-item">
-                        <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab"
-                            href="#tab_aktivitas">Aktivitas</a>
-                    </li>
-                </ul>
-
                 {{-- Start::Tab Content --}}
                 <div class="tab-content" id="myTabContent">
                     {{-- Start::Tab Aktivitas --}}
