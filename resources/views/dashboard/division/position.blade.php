@@ -1,10 +1,6 @@
 <x-dashboard.layout>
     {{-- Start::Head component --}}
     <x-slot name="title">Divisi</x-slot>
-
-    <x-slot name="style">
-        <link rel="stylesheet" href="{{ asset('plugins/custom/datatables/datatables.bundle.css')}} ">
-    </x-slot>
     {{-- End::Head component --}}
 
     {{-- Start::Toolbar component --}}
