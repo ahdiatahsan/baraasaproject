@@ -78,6 +78,7 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
 
     # Umum
     Route::resource('general', GeneralController::class);
+    Route::get('general-datatable', [GeneralController::class, 'datatable'])->name('general.datatable');
 
     /*
     |--------------------------------------------------------
