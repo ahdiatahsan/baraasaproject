@@ -309,7 +309,7 @@
                                     </div>
                                     <div class="mb-6">
                                         <label class="form-label">Tanggal Lahir</label>
-                                        <input class="form-control flatpickr" type="date" name="date_of_birth"
+                                        <input class="form-control flatpickr" type="text" name="date_of_birth"
                                             value="{{ old('date_of_birth', $date_of_birth ?? '') }}" required>
                                     </div>
                                     <div class="mb-6">
@@ -404,7 +404,7 @@
     {{-- Start::Javascript --}}
     <x-slot name="javascript">
         {{-- Start::Flatpickr --}}
-        <script src="https://npmcdn.com/flatpickr/dist/l10n/id.js"></script>
+        <script src="{{ asset('js/flatpickr/id.js') }}"></script>
         <script>
             $(".flatpickr").flatpickr({
                 altInput: true,
