@@ -57,16 +57,20 @@
                         <input class="form-control" type="email" name="email" value="{{ $administrator->email }}"
                             readonly>
                     </div>
+                    @if ($administrator->division_id != null)
                     <div class="mb-6">
                         <label class="form-label">Divisi</label>
                         <input class="form-control" type="text" name="division"
                             value="{{ $administrator->division->name }}" readonly>
                     </div>
+                    @endif
+                    @if ($administrator->position_id != null)
                     <div class="mb-6">
                         <label class="form-label">Posisi</label>
                         <input class="form-control" type="text" name="position"
                             value="{{ $administrator->position->name }}" readonly>
                     </div>
+                    @endif
                     <div>
                         <label class="form-label required">Hak Akses</label>
                         <select class="form-select" name="role" required>
