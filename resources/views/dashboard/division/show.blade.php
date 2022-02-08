@@ -129,7 +129,7 @@
                 swal.fire({
                     title: "Hapus data ini?",
                     text: "Data yang terhapus tidak dapat dikembalikan.",
-                    type: "warning",
+                    icon: "warning",
                     showCloseButton: true,
                     confirmButtonColor: '#f1416c',
                     confirmButtonText: 'Ya, Hapus!'
