@@ -30,8 +30,7 @@ class EventFactory extends Factory
             'date_start' => $this->faker->date,
             'date_end' => $this->faker->date,
             'location' => $this->faker->city,
-            'event_status' => $this->faker->boolean(),
-            'user_id' => User::inRandomOrder()->first()
+            'event_status' => $this->faker->boolean()
         ];
     }
 }

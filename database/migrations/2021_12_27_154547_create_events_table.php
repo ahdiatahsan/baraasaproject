@@ -23,7 +23,6 @@ class CreateEventsTable extends Migration
             $table->date('date_end');
             $table->string('location');
             $table->boolean('event_status');
-            $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate();
             $table->timestamps();
         });
     }
