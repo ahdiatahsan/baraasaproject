@@ -36,10 +36,10 @@ class UserSeeder extends Seeder
             'position-update',
             'position-delete',
 
-            'post-view',
-            'post-create',
-            'post-update',
-            'post-delete',
+            'blog-view',
+            'blog-create',
+            'blog-update',
+            'blog-delete',
 
             'research-view',
             'research-create',
@@ -65,11 +65,6 @@ class UserSeeder extends Seeder
             'participant-create',
             'participant-update',
             'participant-delete',
-
-            'certicate-view',
-            'certicate-create',
-            'certicate-update',
-            'certicate-delete',
 
             'recruitment-view',
             'recruitment-create',
@@ -128,10 +123,10 @@ class UserSeeder extends Seeder
             'position-update',
             'position-delete',
 
-            'post-view',
-            'post-create',
-            'post-update',
-            'post-delete',
+            'blog-view',
+            'blog-create',
+            'blog-update',
+            'blog-delete',
 
             'research-view',
             'research-create',
@@ -158,11 +153,6 @@ class UserSeeder extends Seeder
             'participant-update',
             'participant-delete',
 
-            'certicate-view',
-            'certicate-create',
-            'certicate-update',
-            'certicate-delete',
-
             'recruitment-view',
             'recruitment-create',
             'recruitment-update',
@@ -170,6 +160,7 @@ class UserSeeder extends Seeder
 
             'member-view',
             'member-create',
+            'member-update',
 
             'general-view',
             'general-create',
@@ -200,10 +191,10 @@ class UserSeeder extends Seeder
 
             'position-view',
 
-            'post-view',
-            'post-create',
-            'post-update',
-            'post-delete',
+            'blog-view',
+            'blog-create',
+            'blog-update',
+            'blog-delete',
 
             'thread-view',
             'thread-create',
@@ -220,8 +211,6 @@ class UserSeeder extends Seeder
             'event-view',
 
             'participant-view',
-
-            'certicate-view',
 
             'recruitment-view',
 
@@ -240,10 +229,10 @@ class UserSeeder extends Seeder
         $roleGeneral->syncPermissions([
             'dashboard-view',
 
-            'post-view',
-            'post-create',
-            'post-update',
-            'post-delete',
+            'blog-view',
+            'blog-create',
+            'blog-update',
+            'blog-delete',
 
             'thread-view',
             'thread-create',
