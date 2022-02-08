@@ -17,8 +17,7 @@ class ResearchFactory extends Factory
         return [
             'title' => $this->faker->title,
             'date_of_publish' => $this->faker->date,
-            'file' => $this->faker->word,
-            'user_id' => User::inRandomOrder()->first()
+            'file' => $this->faker->word
         ];
     }
 }

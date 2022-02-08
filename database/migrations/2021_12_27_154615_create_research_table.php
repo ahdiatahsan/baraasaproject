@@ -18,7 +18,6 @@ class CreateResearchTable extends Migration
             $table->string('title');
             $table->date('date_of_publish');
             $table->string('file');
-            $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate();
             $table->timestamps();
         });
     }
