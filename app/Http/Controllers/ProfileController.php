@@ -16,6 +16,12 @@ use Yajra\DataTables\DataTables;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['permission:profile-view'])->only(['index', 'datatable']);
+        $this->middleware(['permission:profile-update'])->only(['update', 'password']);
+    }
+
     public function index(User $user)
     {
         // Check Active User //

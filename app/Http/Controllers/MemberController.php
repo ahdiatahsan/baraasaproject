@@ -22,8 +22,10 @@ class MemberController extends Controller
 {
     public function __construct()
     {
-        //need fix later
-        $this->middleware(['role:super_administrator|administrator|member'])->only('index', 'show');
+        $this->middleware(['permission:member-view'])->only(['index', 'show', 'datatable']);
+        $this->middleware(['permission:member-create'])->only(['create', 'store', 'general', 'getGeneral', 'generalAssign']);
+        $this->middleware(['permission:member-update'])->only(['edit', 'update']);
+        $this->middleware(['permission:member-delete'])->only(['destroy']);
     }
 
     /**
@@ -131,8 +133,6 @@ class MemberController extends Controller
             } else {
                 return view('dashboard.member.edit', compact('member', 'date_of_birth'));
             }
-        } elseif (Auth::user()->hasRole('member')) {
-            return redirect()->route('member.index')->with('warning', 'Anda tidak memiliki akses untuk mengubah anggota tersebut.');
         }
 
         if ($member->hasRole('super_administrator')) {

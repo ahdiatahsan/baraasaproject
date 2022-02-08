@@ -13,7 +13,10 @@ class PositionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['role:super_administrator|administrator|member']);
+        $this->middleware(['permission:position-view'])->only(['index', 'show', 'datatable']);
+        $this->middleware(['permission:position-create'])->only(['create', 'store']);
+        $this->middleware(['permission:position-update'])->only(['edit', 'update']);
+        $this->middleware(['permission:position-delete'])->only(['destroy']);
     }
 
     /**

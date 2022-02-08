@@ -12,7 +12,10 @@ class DivisionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['role:super_administrator|administrator|member']);
+        $this->middleware(['permission:division-view'])->only(['index', 'show', 'datatable']);
+        $this->middleware(['permission:division-create'])->only(['create', 'store', 'position']);
+        $this->middleware(['permission:division-update'])->only(['edit', 'update']);
+        $this->middleware(['permission:division-delete'])->only(['destroy']);
     }
 
     /**
