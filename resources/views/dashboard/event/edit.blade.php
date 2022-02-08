@@ -70,9 +70,9 @@
                     <div class="mb-6">
                         <label class="form-label">Status Acara</label>
                         <select class="form-select" name="event_status" required>
-                            <option value="0" {{ $event->event_status == 0 ? 'selected' : '' }}>Tidak Aktif
+                            <option value="0" {{ $event->event_status == 0 ? 'selected' : '' }}>Terlaksana
                             </option>
-                            <option value="1" {{ $event->event_status == 1 ? 'selected' : '' }}>Aktif
+                            <option value="1" {{ $event->event_status == 1 ? 'selected' : '' }}>Berlangsung
                             </option>
                         </select>
                     </div>

@@ -63,7 +63,7 @@
                     </div>
                     <div class="mb-6">
                         <label class="form-label required">Alasan Mengikuti Acara</label>
-                        <textarea class="form-control" name="body" id="body" rows="10" required></textarea>
+                        <textarea class="form-control" name="body" id="body" rows="10"></textarea>
                     </div>
                     <div class="mb-7">
                         <label class="form-label">
@@ -102,37 +102,37 @@
         {{-- Start::Select2 --}}
         <script>
             $('#select2User').select2({
-		  language: {
-       		noResults: function(){
-				return "Data Tidak ditemukan";
-       		},
-			inputTooShort: function() {
-  				return 'Masukkan minimal 1 huruf';
-  			},
-   		  },
-		  ajax: {
-			url: '{{ route("event.select2-user") }}',
-			dataType: 'json',
-			delay: 250,
-			data: function (params) {
-			  return {
-				q: $.trim(params.term)
-			  };
-			},
-			processResults: function (data) {
-			  return {
-				results: $.map(data, function (item) {
-				  return {
-					text: item.name,
-					id: item.id
-				  }
-				})
-			  }
-			},
-			cache: true
-		  },
-		  minimumInputLength: 1
-		});
+                language: {
+                    noResults: function () {
+                        return "Data Tidak ditemukan";
+                    },
+                    inputTooShort: function () {
+                        return 'Masukkan minimal 1 huruf';
+                    },
+                },
+                ajax: {
+                    url: '{{ route("event.select2-user") }}',
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            q: $.trim(params.term)
+                        };
+                    },
+                    processResults: function (data) {
+                        return {
+                            results: $.map(data, function (item) {
+                                return {
+                                    text: item.name,
+                                    id: item.id
+                                }
+                            })
+                        }
+                    },
+                    cache: true
+                },
+                minimumInputLength: 1
+            });
         </script>
         {{-- Start::Select2 --}}
     </x-slot>

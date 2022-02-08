@@ -69,8 +69,8 @@
                     <div class="mb-6">
                         <label class="form-label required">Status Acara</label>
                         <select class="form-select" name="event_status" required>
-                            <option value="0">Tidak Aktif</option>
-                            <option value="1">Aktif</option>
+                            <option value="0">Terlaksana</option>
+                            <option value="1">Berlangsung</option>
                         </select>
                     </div>
                     <div class="mb-7">
