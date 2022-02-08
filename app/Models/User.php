@@ -59,11 +59,6 @@ class User extends Authenticatable
         return $this->hasMany(Blog::class);
     }
 
-    public function events()
-    {
-        return $this->hasMany(Event::class);
-    }
-
     public function threads()
     {
         return $this->hasMany(Thread::class);
@@ -77,11 +72,6 @@ class User extends Authenticatable
     public function participants()
     {
         return $this->hasMany(Participant::class);
-    }
-
-    public function researches()
-    {
-        return $this->hasMany(Research::class);
     }
 
     public function recruitments()
