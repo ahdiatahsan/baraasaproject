@@ -65,6 +65,13 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
     */
     # Anggota
     Route::resource('member', MemberController::class);
+    Route::get('member-datatable', [MemberController::class, 'datatable'])->name('member.datatable');
+    Route::get('member/general/create', [MemberController::class, 'general'])->name('member.general');
+    Route::patch('member/general/assign', [MemberController::class, 'generalAssign'])->name('member.general-assign');
+    Route::get('member-select2-user', [MemberController::class, 'select2_user'])->name('member.select2-user');
+    Route::get('member-select2-division', [MemberController::class, 'select2_division'])->name('member.select2-division');
+    Route::get('member-select2-position', [MemberController::class, 'select2_position'])->name('member.select2-position');
+    Route::get('get/general/{id}', [MemberController::class, 'getGeneral'])->name('member.get-general');
 
     # Divisi
     Route::resource('division', DivisionController::class);
