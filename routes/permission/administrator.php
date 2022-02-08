@@ -51,6 +51,10 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
     */
     # Acara
     Route::resource('event', EventController::class);
+    Route::get('event-datatable', [EventController::class, 'datatable'])->name('event.datatable');
+    Route::get('event/display/{event}', [EventController::class, 'display'])->name('event.display');
+    Route::get('event/{event}/participant', [EventController::class, 'participant'])->name('event.participant');
+    Route::get('event-select2-user', [EventController::class, 'select2_user'])->name('event.select2-user');
 
     # Peserta
     Route::resource('participant', ParticipantController::class);
