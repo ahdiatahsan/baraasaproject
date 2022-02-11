@@ -65,6 +65,8 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
 
     # Perekrutan
     Route::resource('recruitment', RecruitmentController::class);
+    Route::get('recruitment-datatable', [RecruitmentController::class, 'datatable'])->name('recruitment.datatable');
+    Route::get('recruitment-select2-user', [RecruitmentController::class, 'select2_user'])->name('recruitment.select2-user');
 
     /*
     |--------------------------------------------------------
