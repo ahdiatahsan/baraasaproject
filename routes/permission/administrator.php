@@ -58,6 +58,10 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
 
     # Peserta
     Route::resource('participant', ParticipantController::class);
+    Route::get('participant-datatable', [ParticipantController::class, 'datatable'])->name('participant.datatable');
+    Route::patch('participant/certificate/{participant}', [ParticipantController::class, 'certificate'])->name('participant.certificate');
+    Route::get('participant-select2-event', [ParticipantController::class, 'select2_event'])->name('participant.select2-event');
+    Route::get('participant-select2-user', [ParticipantController::class, 'select2_user'])->name('participant.select2-user');
 
     # Perekrutan
     Route::resource('recruitment', RecruitmentController::class);
