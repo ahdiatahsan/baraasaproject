@@ -14,6 +14,7 @@
     </a>
   </div>
 
+  @if (Auth::user()->hasAnyRole('super_administrator|administrator'))
   <div class="ms-2">
     <a class="btn btn-sm btn-icon btn-light-success btn-active-light-dark" data-bs-toggle="tooltip" title="Ubah"
       href="{{ route('general.edit', $general->id) }}">
@@ -49,4 +50,5 @@
       </span>
     </a>
   </div>
+  @endif
 </div>
