@@ -102,11 +102,11 @@ class AdministratorController extends Controller
                 return redirect()->route('administrator.index')->with('warning', 'Jumlah super administrator tidak dapat melebihi batas (5).');
             } else {
                 $administrator->syncRoles($request->input('role'));
-                return redirect()->route('administrator.index')->with('success', 'Hak akses ' . $request->input('name') . ' berhasil diubah.');
+                return redirect()->route('administrator.index')->with('success', 'Hak akses ' . $request->input('name') . ' telah diubah.');
             }
         } else {
             $administrator->syncRoles($request->input('role'));
-            return redirect()->route('administrator.index')->with('success', 'Hak akses ' . $request->input('name') . ' berhasil diubah.');
+            return redirect()->route('administrator.index')->with('success', 'Hak akses ' . $request->input('name') . ' telah diubah.');
         }
     }
 

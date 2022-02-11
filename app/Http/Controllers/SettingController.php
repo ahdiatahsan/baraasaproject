@@ -108,7 +108,7 @@ class SettingController extends Controller
         $setting->recruitment_status = $request->input('recruitment_status');
         $setting->save();
 
-        return redirect()->route('setting.edit', '1')->with('success', 'Pengaturan berhasil diubah.');
+        return redirect()->route('setting.edit', '1')->with('success', 'Pengaturan telah diubah.');
     }
 
     /**

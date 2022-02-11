@@ -202,7 +202,7 @@ class EventController extends Controller
         $event->event_status = $request->input('event_status');
         $event->save();
 
-        return redirect()->route('event.edit', $event->id)->with('success', 'Acara berhasil diubah.');
+        return redirect()->route('event.edit', $event->id)->with('success', 'Acara telah diubah.');
     }
 
     /**

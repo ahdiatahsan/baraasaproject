@@ -60,7 +60,7 @@ class PositionController extends Controller
         if (URL::previous() === URL::route('division.position', $request->input('division_id'))) {
             return redirect()->route('division.position', $request->input('division_id'))->with('success', 'Posisi ' . $request->input('name') . ' telah ditambahkan.');
         } else {
-            return redirect()->route('position.create')->with('success', 'Posisi ' . $request->input('name') . ' telah ditambahkan.');
+            return redirect()->route('position.create')->with('success', 'Posisi ' . $request->input('name') . ' berhasil ditambahkan.');
         }
     }
 
@@ -104,7 +104,7 @@ class PositionController extends Controller
         $position->name = $request->input('name');
         $position->save();
 
-        return redirect()->route('position.edit', $position->id)->with('success', 'Posisi berhasil diubah.');
+        return redirect()->route('position.edit', $position->id)->with('success', 'Posisi telah diubah.');
     }
 
     /**

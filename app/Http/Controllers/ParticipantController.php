@@ -73,7 +73,7 @@ class ParticipantController extends Controller
             'data_status' => $request->input('data_status')
         ]);
 
-        return redirect()->route('participant.create')->with('success', 'Peserta telah ditambahkan.');
+        return redirect()->route('participant.create')->with('success', 'Peserta berhasil ditambahkan.');
     }
 
     /**
@@ -153,7 +153,7 @@ class ParticipantController extends Controller
         $participant->data_status = $request->input('data_status');
         $participant->save();
 
-        return redirect()->route('participant.edit', $participant->id)->with('success', 'Peserta berhasil diubah.');
+        return redirect()->route('participant.edit', $participant->id)->with('success', 'Peserta telah diubah.');
     }
 
     /**

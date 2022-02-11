@@ -86,7 +86,7 @@ class ProfileController extends Controller
         $user->email = $request->input('email');
         $user->save();
 
-        return redirect()->route('profile.index', $user->id)->with('success', 'Informasi akun berhasil diubah.');
+        return redirect()->route('profile.index', $user->id)->with('success', 'Informasi akun telah diubah.');
     }
 
     /**

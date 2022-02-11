@@ -81,7 +81,7 @@ class GeneralController extends Controller
 
         $general->assignRole('general');
 
-        return redirect()->route('general.create')->with('success', 'Pengguna ' . $request->input('name') . ' telah ditambahkan.');
+        return redirect()->route('general.create')->with('success', 'Pengguna ' . $request->input('name') . ' berhasil ditambahkan.');
     }
 
     /**
@@ -171,7 +171,7 @@ class GeneralController extends Controller
         $general->email = $request->input('email');
         $general->save();
 
-        return redirect()->route('general.edit', $general->id)->with('success', 'Informasi pengguna berhasil diubah.');
+        return redirect()->route('general.edit', $general->id)->with('success', 'Informasi pengguna telah diubah.');
     }
 
     /**

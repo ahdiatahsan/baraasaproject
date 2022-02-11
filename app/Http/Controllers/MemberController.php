@@ -87,7 +87,7 @@ class MemberController extends Controller
 
         $member->assignRole($request->input('role'));
 
-        return redirect()->route('member.create')->with('success', 'Anggota ' . $request->input('name') . ' telah ditambahkan.');
+        return redirect()->route('member.create')->with('success', 'Anggota ' . $request->input('name') . ' berhasil ditambahkan.');
     }
 
     /**
@@ -203,7 +203,7 @@ class MemberController extends Controller
         if ($request->input('role') == 'general') {
             return redirect()->route('member.index')->with('warning', $request->input('name') . ' dihapus dari anggota.');
         } else {
-            return redirect()->route('member.edit', $member->id)->with('success', 'Informasi anggota berhasil diubah.');
+            return redirect()->route('member.edit', $member->id)->with('success', 'Informasi anggota telah diubah.');
         }
     }
 

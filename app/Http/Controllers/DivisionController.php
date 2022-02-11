@@ -54,7 +54,7 @@ class DivisionController extends Controller
             'name' => $request->input('name')
         ]);
 
-        return redirect()->route('division.create')->with('success', 'Divisi ' . $request->input('name') . ' telah ditambahkan.');
+        return redirect()->route('division.create')->with('success', 'Divisi ' . $request->input('name') . ' berhasil ditambahkan.');
     }
 
     /**
@@ -107,7 +107,7 @@ class DivisionController extends Controller
         $division->name = $request->input('name');
         $division->save();
 
-        return redirect()->route('division.edit', $division->id)->with('success', 'Divisi berhasil diubah.');
+        return redirect()->route('division.edit', $division->id)->with('success', 'Divisi telah diubah.');
     }
 
     /**
