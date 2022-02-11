@@ -49,7 +49,7 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-6">
-                        <label class="form-label required">Judul Event</label>
+                        <label class="form-label required">Judul Acara</label>
                         <input class="form-control" type="text" name="event_id" value="{{ $eventGet->id }}" required
                             hidden>
                         <input class="form-control" type="text" name="event_name" value="{{ $eventGet->title }}"
@@ -75,8 +75,8 @@
                     <div>
                         <label class="form-label required">Status Berkas</label>
                         <select class="form-select" name="publication_status" required>
-                            <option value="0">Berkas Belum Diverifikasi</option>
-                            <option value="1">Berkas Telah Diverifikasi</option>
+                            <option value="0">Belum Diverifikasi</option>
+                            <option value="1">Telah Diverifikasi</option>
                         </select>
                     </div>
                 </div>
