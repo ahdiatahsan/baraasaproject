@@ -23,7 +23,7 @@ class MemberController extends Controller
     public function __construct()
     {
         $this->middleware(['permission:member-view'])->only(['index', 'show', 'datatable']);
-        $this->middleware(['permission:member-create'])->only(['create', 'store', 'general', 'getGeneral', 'generalAssign', 'select2_user', 'select2_division', 'select2_position']);
+        $this->middleware(['permission:member-create'])->only(['create', 'store', 'general', 'getGeneral', 'generalAssign']);
         $this->middleware(['permission:member-update'])->only(['edit', 'update']);
         $this->middleware(['permission:member-delete'])->only(['destroy']);
     }

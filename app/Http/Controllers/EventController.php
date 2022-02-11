@@ -18,7 +18,7 @@ class EventController extends Controller
     public function __construct()
     {
         $this->middleware(['permission:event-view'])->only(['index', 'show', 'display', 'datatable']);
-        $this->middleware(['permission:event-create'])->only(['create', 'store', 'participant', 'select2_user']);
+        $this->middleware(['permission:event-create'])->only(['create', 'store', 'participant']);
         $this->middleware(['permission:event-update'])->only(['edit', 'update']);
         $this->middleware(['permission:event-delete'])->only(['destroy']);
     }
