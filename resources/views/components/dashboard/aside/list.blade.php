@@ -270,6 +270,7 @@
             {{-- End::Administrator --}}
             @endhasrole
 
+            @hasanyrole('super_administrator|administrator')
             {{-- Start::Aplikasi --}}
             <x-dashboard.aside.single_menu linkClass="{{ $settingMenu }}" title="Aplikasi"
                 url="{{ route('setting.edit', 1) }}">
@@ -283,6 +284,7 @@
                 </x-slot>
             </x-dashboard.aside.single_menu>
             {{-- End::Aplikasi --}}
+            @endhasrole
 
             {{-- Start::Notifikasi --}}
             {{-- <x-dashboard.aside.single_menu linkClass="{{ $notificationMenu }}" title="Notifikasi"
@@ -301,7 +303,7 @@
             {{-- End::Notifikasi --}}
 
             {{-- Start::Separator --}}
-            <div class="menu-item">
+            <div class="menu-item mt-2">
                 <div class="menu-content">
                     <div class="separator mx-1 my-4"></div>
                 </div>
