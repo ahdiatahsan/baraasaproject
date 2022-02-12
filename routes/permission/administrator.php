@@ -37,6 +37,8 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
 
     # Forum
     Route::resource('thread', ThreadController::class);
+    Route::get('thread-datatable', [ThreadController::class, 'datatable'])->name('thread.datatable');
+    Route::post('thread-comment', [ThreadController::class, 'comment'])->name('thread.comment');
 
     # Komentar
     Route::resource('comment', CommentController::class);
