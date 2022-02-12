@@ -50,8 +50,7 @@
                 <div class="card-body">
                     <div class="mb-6">
                         <label class="form-label">Nama Lengkap</label>
-                        <input class="form-control" type="text" name="name"
-                            value="{{ old('name', $general->name ?? '') }}" required>
+                        <input class="form-control" type="text" name="name" value="{{ $general->name }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Jenis Kelamin</label>
@@ -64,28 +63,26 @@
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Tempat Lahir</label>
-                        <input class="form-control" type="text" name="birthplace"
-                            value="{{ old('birthplace', $general->birthplace ?? '') }}" required>
+                        <input class="form-control" type="text" name="birthplace" value="{{ $general->birthplace }}"
+                            required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Tanggal Lahir</label>
                         <input class="form-control flatpickr" type="text" name="date_of_birth"
-                            value="{{ old('date_of_birth', $date_of_birth ?? '') }}" required>
+                            value="{{ $date_of_birth }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Alamat</label>
-                        <input class="form-control" type="text" name="address"
-                            value="{{ old('address', $general->address ?? '') }}" required>
+                        <input class="form-control" type="text" name="address" value="{{ $general->address }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Nomor Telepon</label>
-                        <input class="form-control" type="tel" name="phone_number"
-                            value="{{ old('phone_number', $general->phone_number ?? '') }}" required>
+                        <input class="form-control" type="tel" name="phone_number" value="{{ $general->phone_number }}"
+                            required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Email</label>
-                        <input class="form-control" type="email" name="email"
-                            value="{{ old('email', $general->email ?? '') }}" required>
+                        <input class="form-control" type="email" name="email" value="{{ $general->email }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Password</label>

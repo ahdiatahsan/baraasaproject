@@ -52,28 +52,24 @@
                 <div class="card-body">
                     <div class="mb-6">
                         <label class="form-label required">Email</label>
-                        <input class="form-control" type="email" name="email"
-                            value="{{ old('email', $setting->email ?? null) }}" required>
+                        <input class="form-control" type="email" name="email" value="{{ $setting->email }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label required">Nomor Telepon</label>
-                        <input class="form-control" type="tel" name="phone"
-                            value="{{ old('phone', $setting->phone ?? null) }}" required>
+                        <input class="form-control" type="tel" name="phone" value="{{ $setting->phone }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label required">Alamat</label>
-                        <input class="form-control" type="text" name="address"
-                            value="{{ old('address', $setting->address ?? null) }}" required>
+                        <input class="form-control" type="text" name="address" value="{{ $setting->address }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label required">Instagram (Link)</label>
-                        <input class="form-control" type="text" name="instagram"
-                            value="{{ old('instagram', $setting->instagram ?? null) }}" required>
+                        <input class="form-control" type="text" name="instagram" value="{{ $setting->instagram }}"
+                            required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label required">Spotify (Link)</label>
-                        <input class="form-control" type="text" name="spotify"
-                            value="{{ old('spotify', $setting->spotify ?? null) }}" required>
+                        <input class="form-control" type="text" name="spotify" value="{{ $setting->spotify }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Status Perekrutan</label>

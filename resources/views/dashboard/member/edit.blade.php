@@ -50,8 +50,7 @@
                 <div class="card-body">
                     <div class="mb-6">
                         <label class="form-label">Nama Lengkap</label>
-                        <input class="form-control" type="text" name="name"
-                            value="{{ old('name', $member->name ?? '') }}" required>
+                        <input class="form-control" type="text" name="name" value="{{ $member->name }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Jenis Kelamin</label>
@@ -64,28 +63,26 @@
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Tempat Lahir</label>
-                        <input class="form-control" type="text" name="birthplace"
-                            value="{{ old('birthplace', $member->birthplace ?? '') }}" required>
+                        <input class="form-control" type="text" name="birthplace" value="{{ $member->birthplace }}"
+                            required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Tanggal Lahir</label>
                         <input class="form-control flatpickr" type="text" name="date_of_birth"
-                            value="{{ old('date_of_birth', $date_of_birth ?? '') }}" required>
+                            value="{{ $date_of_birth }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Alamat</label>
-                        <input class="form-control" type="text" name="address"
-                            value="{{ old('address', $member->address ?? '') }}" required>
+                        <input class="form-control" type="text" name="address" value="{{ $member->address }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Nomor Telepon</label>
-                        <input class="form-control" type="tel" name="phone_number"
-                            value="{{ old('phone_number', $member->phone_number ?? '') }}" required>
+                        <input class="form-control" type="tel" name="phone_number" value="{{ $member->phone_number }}"
+                            required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Email</label>
-                        <input class="form-control" type="email" name="email"
-                            value="{{ old('email', $member->email ?? '') }}" required>
+                        <input class="form-control" type="email" name="email" value="{{ $member->email }}" required>
                     </div>
                     <div class="mb-6">
                         <label class="form-label">Password</label>
