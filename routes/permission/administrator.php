@@ -43,6 +43,7 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
 
     # Jurnal
     Route::resource('research', ResearchController::class);
+    Route::get('research-datatable', [ResearchController::class, 'datatable'])->name('research.datatable');
 
     /*
     |--------------------------------------------------------
