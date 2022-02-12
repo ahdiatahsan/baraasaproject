@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
-use App\Http\Requests\StoreCommentRequest;
-use App\Http\Requests\UpdateCommentRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CommentController extends Controller
 {
@@ -15,7 +15,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.comment.index');
     }
 
     /**
@@ -25,16 +25,16 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.comment.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCommentRequest  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCommentRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -81,6 +81,8 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        Session::flash('success', 'Komentar telah dihapus.');
+
+        $comment->delete();
     }
 }
