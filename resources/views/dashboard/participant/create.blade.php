@@ -61,7 +61,8 @@
                     </div>
                     <div class="mb-6">
                         <label class="form-label required">Alasan Mengikuti Acara</label>
-                        <textarea class="form-control" name="reason" id="reason" rows="10"></textarea>
+                        <textarea class="form-control" name="reason" id="reason"
+                            rows="10">{{ old('reason') }}</textarea>
                     </div>
                     <div class="mb-7">
                         <label class="form-label">
