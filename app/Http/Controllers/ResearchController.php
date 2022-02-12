@@ -11,6 +11,14 @@ use Yajra\DataTables\DataTables;
 
 class ResearchController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['permission:research-view'])->only(['index', 'datatable']);
+        $this->middleware(['permission:research-create'])->only(['create', 'store']);
+        $this->middleware(['permission:research-update'])->only(['edit', 'update']);
+        $this->middleware(['permission:research-delete'])->only(['destroy']);
+    }
+
     /**
      * Display a listing of the resource.
      *
