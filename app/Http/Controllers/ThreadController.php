@@ -153,19 +153,38 @@ class ThreadController extends Controller
      */
     public function datatable(Request $request)
     {
-        if ($request->ajax()) {
-            $threads = Thread::all();
+        if (Auth::user()->hasAnyRole('super_administrator|administrator|member')) {
+            if ($request->ajax()) {
+                $threads = Thread::all();
 
-            return DataTables::of($threads)
-                ->addColumn('status', function ($thread) {
-                    return view('dashboard.thread.status', compact('thread'))->render();
-                })
-                ->addColumn('action', function ($thread) {
-                    return view('dashboard.thread.action', compact('thread'))->render();
-                })
-                ->rawColumns(['status', 'action'])
-                ->addIndexColumn()
-                ->make(true);
+                return DataTables::of($threads)
+                    ->addColumn('status', function ($thread) {
+                        return view('dashboard.thread.status', compact('thread'))->render();
+                    })
+                    ->addColumn('action', function ($thread) {
+                        return view('dashboard.thread.action', compact('thread'))->render();
+                    })
+                    ->rawColumns(['status', 'action'])
+                    ->addIndexColumn()
+                    ->make(true);
+            }
+        } else {
+            if ($request->ajax()) {
+                $threads = Thread::with('user')
+                ->where('user_id', '=', Auth::user()->id)
+                ->get();
+
+                return DataTables::of($threads)
+                    ->addColumn('status', function ($thread) {
+                        return view('dashboard.thread.status', compact('thread'))->render();
+                    })
+                    ->addColumn('action', function ($thread) {
+                        return view('dashboard.thread.action', compact('thread'))->render();
+                    })
+                    ->rawColumns(['status', 'action'])
+                    ->addIndexColumn()
+                    ->make(true);
+            }
         }
     }
 

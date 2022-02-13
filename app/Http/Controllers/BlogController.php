@@ -158,19 +158,38 @@ class BlogController extends Controller
      */
     public function datatable(Request $request)
     {
-        if ($request->ajax()) {
-            $blogs = Blog::all();
-
-            return DataTables::of($blogs)
-                ->addColumn('status', function ($blog) {
-                    return view('dashboard.blog.status', compact('blog'))->render();
-                })
-                ->addColumn('action', function ($blog) {
-                    return view('dashboard.blog.action', compact('blog'))->render();
-                })
-                ->rawColumns(['status', 'action'])
-                ->addIndexColumn()
-                ->make(true);
+        if (Auth::user()->hasAnyRole('super_administrator|administrator|member')) {
+            if ($request->ajax()) {
+                $blogs = Blog::all();
+    
+                return DataTables::of($blogs)
+                    ->addColumn('status', function ($blog) {
+                        return view('dashboard.blog.status', compact('blog'))->render();
+                    })
+                    ->addColumn('action', function ($blog) {
+                        return view('dashboard.blog.action', compact('blog'))->render();
+                    })
+                    ->rawColumns(['status', 'action'])
+                    ->addIndexColumn()
+                    ->make(true);
+            }
+        } else {
+            if ($request->ajax()) {
+                $blogs = Blog::with('user')
+                ->where('user_id', '=', Auth::user()->id)
+                ->get();
+    
+                return DataTables::of($blogs)
+                    ->addColumn('status', function ($blog) {
+                        return view('dashboard.blog.status', compact('blog'))->render();
+                    })
+                    ->addColumn('action', function ($blog) {
+                        return view('dashboard.blog.action', compact('blog'))->render();
+                    })
+                    ->rawColumns(['status', 'action'])
+                    ->addIndexColumn()
+                    ->make(true);
+            }
         }
     }
 
