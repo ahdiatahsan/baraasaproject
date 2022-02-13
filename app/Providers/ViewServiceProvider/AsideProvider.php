@@ -36,7 +36,6 @@ class AsideProvider extends ServiceProvider
             # Postingan
             $blogMenu = request()->routeIs('blog.*') ? 'active' : '';
             $threadMenu = request()->routeIs('thread.*') ? 'active' : '';
-            $commentMenu = request()->routeIs('comment.*') ? 'active' : '';
             $researchMenu = request()->routeIs('research.*') ? 'active' : '';
 
             # Kegiatan
@@ -63,7 +62,6 @@ class AsideProvider extends ServiceProvider
                 # Postingan
                 'blogMenu',
                 'threadMenu',
-                'commentMenu',
                 'researchMenu',
 
                 # Kegiatan
