@@ -99,7 +99,7 @@
 
                                 <div class="overlay mt-8">
                                     <div class="bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-350px"
-                                        style="background-image:url('https://images8.alphacoders.com/548/548694.jpg')">
+                                        style="background-image:url('{{ asset('storage/blog/'.$blog->thumbnail) }}')">
                                     </div>
                                 </div>
                             </div>
