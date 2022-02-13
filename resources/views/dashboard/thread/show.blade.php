@@ -150,8 +150,7 @@
                             </div>
                         </div>
                         <div class="d-flex align-items-center py-1">
-                            @if ($comment->user_id == Auth::user()->id ||
-                            Auth::user()->hasAnyRole('super_administrator|administrator'))
+                            @if ($comment->user_id == Auth::user()->id)
                             <a href="{{ route('comment.edit', $comment->id) }}"
                                 class="btn btn-sm btn-flex btn-light-success btn-active-light me-2">
                                 <span class="svg-icon svg-icon-success svg-icon-2"><svg
@@ -167,6 +166,9 @@
                                             d="M8.82343 12.0064L8.08852 14.3348C7.8655 15.0414 8.46151 15.7366 9.19388 15.6242L11.8974 15.2092C12.4642 15.1222 12.6916 14.4278 12.2861 14.0223L9.98595 11.7221C9.61452 11.3507 8.98154 11.5055 8.82343 12.0064Z"
                                             fill="black" />
                                     </svg></span> Ubah</a>
+                            @endif
+                            @if ($comment->user_id == Auth::user()->id ||
+                            Auth::user()->hasAnyRole('super_administrator|administrator'))
                             <a id="{{$comment->id}}"
                                 class="btn btn-sm btn-flex btn-light-danger btn-active-light me-1 delete">
                                 <span class="svg-icon svg-icon-danger svg-icon-2"><svg
@@ -187,17 +189,12 @@
                     </div>
                     <div class="fs-5 fw-normal text-gray-800">{!! $comment->body !!}</div>
                 </div>
-                <!--end::Wrapper-->
             </div>
             @endforeach
         </div>
-        <!--end::Replies-->
-        <!--begin::Pagination-->
         {{ $comments->links('components.dashboard.pagination') }}
-        <!--end::Questions-->
-        {{-- End::Content --}}
     </x-slot>
-    {{-- End::Post component --}}
+    {{-- End::Post component --}
 
     {{-- Start::Javascript --}}
     <x-slot name="javascript">
