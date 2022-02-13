@@ -76,7 +76,7 @@ class EventController extends Controller
             'thumbnail' => $photoName
         ]);
 
-        return redirect()->route('event.create')->with('success', 'Acara ' . $request->input('title') . ' berhasil ditambahkan.');
+        return redirect()->route('event.create')->with('success', 'Acara berhasil ditambahkan.');
     }
 
     /**
@@ -213,7 +213,7 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        Session::flash('success', 'Acara ' . $event->name . ' telah dihapus.');
+        Session::flash('success', 'Acara telah dihapus.');
 
         if (Storage::exists('public/event/' . $event->thumbnail)) {
             Storage::delete('public/event/' . $event->thumbnail);
