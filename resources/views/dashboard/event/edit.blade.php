@@ -85,9 +85,7 @@
                     </div>
                     <div>
                         <label class="form-label">Isi Konten</label>
-                        <textarea class="form-control" name="body" id="body" rows="10">
-                            {{ $event->body }}
-                        </textarea>
+                        <textarea class="form-control" name="body" id="body" rows="10">{{ $event->body }}</textarea>
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-end py-6">
