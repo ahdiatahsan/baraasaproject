@@ -51,11 +51,18 @@
                         <input class="form-control" type="text" name="title" value="{{ old('title') }}" required>
                     </div>
                     <div class="mb-7">
-                        <label class="form-label required">Status Publikasi</label>
+                        <label class="form-label">Status Publikasi</label>
+                        @if (Auth::user()->hasAnyRole('super_administrator|administrator'))
                         <select class="form-select" name="publication_status" required>
                             <option value="0">Belum Terbit</option>
-                            <option value="1">Telah Terbit</option>
+                            <option value="1" selected>Telah Terbit</option>
                         </select>
+                        @else
+                        <select class="form-select" required disabled>
+                            <option value="1" selected>Telah Terbit</option>
+                        </select>
+                        <input class="form-control" type="text" name="publication_status" value="1" required hidden>
+                        @endif
                     </div>
                     <div>
                         <label class="form-label required">Deskripsi Pertanyaan</label>

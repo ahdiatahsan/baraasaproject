@@ -53,12 +53,23 @@
                     </div>
                     <div class="mb-7">
                         <label class="form-label">Status Publikasi</label>
+                        @if (Auth::user()->hasAnyRole('super_administrator|administrator'))
                         <select class="form-select" name="publication_status" required>
-                            <option value="0" {{ $thread->publication_status == '0' ? 'selected' : '' }}>Belum Terbit
+                            <option value="0" {{ $thread->publication_status == 0 ? 'selected' : '' }}>Belum Terbit
                             </option>
-                            <option value="1" {{ $thread->publication_status == '1' ? 'selected' : '' }}>Telah Terbit
+                            <option value="1" {{ $thread->publication_status == 1 ? 'selected' : '' }}>Telah Terbit
                             </option>
                         </select>
+                        @else
+                        <select class="form-select" required disabled>
+                            <option value="0" {{ $thread->publication_status == 0 ? 'selected' : '' }}>Belum Terbit
+                            </option>
+                            <option value="1" {{ $thread->publication_status == 1 ? 'selected' : '' }}>Telah Terbit
+                            </option>
+                        </select>
+                        <input class="form-control" type="text" name="publication_status"
+                            value="{{ $thread->publication_status }}" required hidden>
+                        @endif
                     </div>
                     <div>
                         <label class="form-label">Deskripsi Pertanyaan</label>
