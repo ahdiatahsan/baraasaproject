@@ -34,6 +34,7 @@ Route::middleware('auth:sanctum')->prefix('dashboard')->group(function () {
     */
     # Blog
     Route::resource('blog', BlogController::class);
+    Route::get('blog-datatable', [BlogController::class, 'datatable'])->name('blog.datatable');
 
     # Forum
     Route::resource('thread', ThreadController::class);
