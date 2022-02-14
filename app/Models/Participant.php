@@ -13,14 +13,10 @@ class Participant extends Model
         'reason',
         'file',
         'data_status',
+        'certificate',
         'event_id',
         'user_id'
     ];
-
-    public function certificate()
-    {
-        return $this->hasMany(Certificate::class);
-    }
 
     public function event()
     {

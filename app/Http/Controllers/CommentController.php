@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
-use App\Http\Requests\StoreCommentRequest;
-use App\Http\Requests\UpdateCommentRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -31,10 +32,10 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCommentRequest  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCommentRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -58,19 +59,25 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-        //
+        return view('dashboard.comment.edit', compact('comment'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCommentRequest  $request
-     * @param  \App\Models\Comment  $comment
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCommentRequest $request, Comment $comment)
+    public function update(Request $request, Comment $comment)
     {
-        //
+        $request->validate([
+            'body' => 'required|string'
+        ]);
+
+        $comment->body = $request->input('body');
+        $comment->save();
+
+        return redirect()->route('comment.edit', $comment->id)->with('success', 'Komentar telah diubah.');
     }
 
     /**
@@ -81,6 +88,8 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        Session::flash('success', 'Komentar telah dihapus.');
+
+        $comment->delete();
     }
 }

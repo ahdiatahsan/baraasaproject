@@ -12,12 +12,6 @@ class Research extends Model
     protected $fillable = [
         'title',
         'date_of_publish',
-        'file',
-        'user_id'
+        'file'
     ];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 }

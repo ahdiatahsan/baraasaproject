@@ -35,7 +35,8 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
             'address' => $this->faker->address,
-            
+            'photo' => $this->faker->name,
+
             'division_id' => Division::inRandomOrder()->first(),
             'position_id' => Position::inRandomOrder()->first()
         ];

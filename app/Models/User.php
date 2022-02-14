@@ -52,16 +52,11 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-    ]; 
+    ];
 
-    public function posts()
+    public function blogs()
     {
-        return $this->hasMany(Post::class);
-    }
-
-    public function events()
-    {
-        return $this->hasMany(Event::class);
+        return $this->hasMany(Blog::class);
     }
 
     public function threads()
@@ -77,11 +72,6 @@ class User extends Authenticatable
     public function participants()
     {
         return $this->hasMany(Participant::class);
-    }
-
-    public function researches()
-    {
-        return $this->hasMany(Research::class);
     }
 
     public function recruitments()

@@ -27,6 +27,7 @@ class ParticipantFactory extends Factory
             'reason' => $this->faker->sentence,
             'file' => $this->faker->word,
             'data_status' => $this->faker->boolean(),
+            'certificate' => $this->faker->word,
             
             'event_id' => Event::inRandomOrder()->first(),
             'user_id' => User::inRandomOrder()->first()

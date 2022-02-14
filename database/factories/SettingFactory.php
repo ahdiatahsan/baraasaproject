@@ -27,8 +27,8 @@ class SettingFactory extends Factory
             'address' => $this->faker->address,
             'instagram' => 'https://www.instagram.com/baraasa.project/',
             'spotify' => 'https://open.spotify.com/show/7ill8y7DsenVbgk41o6Oi5?si=0e50d2789341459e',
-            'recruitment_status' => $this->faker->boolean(),
-            'recruitment_thumbnail' => $this->faker->boolean(),
+            'recruitment_status' => "Ditutup",
+            'recruitment_thumbnail' => $this->faker->name,
         ];
     }
 }

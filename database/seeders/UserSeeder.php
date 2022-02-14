@@ -36,10 +36,10 @@ class UserSeeder extends Seeder
             'position-update',
             'position-delete',
 
-            'post-view',
-            'post-create',
-            'post-update',
-            'post-delete',
+            'blog-view',
+            'blog-create',
+            'blog-update',
+            'blog-delete',
 
             'research-view',
             'research-create',
@@ -66,20 +66,15 @@ class UserSeeder extends Seeder
             'participant-update',
             'participant-delete',
 
-            'certicate-view',
-            'certicate-create',
-            'certicate-update',
-            'certicate-delete',
-
             'recruitment-view',
             'recruitment-create',
             'recruitment-update',
             'recruitment-delete',
 
-            'team-view',
-            'team-create',
-            'team-update',
-            'team-delete',
+            'member-view',
+            'member-create',
+            'member-update',
+            'member-delete',
 
             'general-view',
             'general-create',
@@ -95,6 +90,11 @@ class UserSeeder extends Seeder
             'profile-create',
             'profile-update',
             'profile-delete',
+
+            // 'notification-view',
+            // 'notification-create',
+            // 'notification-update',
+            // 'notification-delete',
 
             'setting-view',
             'setting-create',
@@ -123,10 +123,10 @@ class UserSeeder extends Seeder
             'position-update',
             'position-delete',
 
-            'post-view',
-            'post-create',
-            'post-update',
-            'post-delete',
+            'blog-view',
+            'blog-create',
+            'blog-update',
+            'blog-delete',
 
             'research-view',
             'research-create',
@@ -153,18 +153,14 @@ class UserSeeder extends Seeder
             'participant-update',
             'participant-delete',
 
-            'certicate-view',
-            'certicate-create',
-            'certicate-update',
-            'certicate-delete',
-
             'recruitment-view',
             'recruitment-create',
             'recruitment-update',
             'recruitment-delete',
 
-            'team-view',
-            'team-create',
+            'member-view',
+            'member-create',
+            'member-update',
 
             'general-view',
             'general-create',
@@ -176,20 +172,67 @@ class UserSeeder extends Seeder
             'profile-update',
             'profile-delete',
 
+            // 'notification-view',
+            // 'notification-create',
+            // 'notification-update',
+            // 'notification-delete',
+
             'setting-view',
             'setting-create',
             'setting-update',
             'setting-delete',
         ]);
 
+        $roleMember = PermissionRole::create(['name' => 'member']);
+        $roleMember->syncPermissions([
+            'dashboard-view',
+
+            'division-view',
+
+            'position-view',
+
+            'blog-view',
+            'blog-create',
+            'blog-update',
+            'blog-delete',
+
+            'thread-view',
+            'thread-create',
+            'thread-update',
+            'thread-delete',
+
+            'comment-view',
+            'comment-create',
+            'comment-update',
+            'comment-delete',
+
+            'research-view',
+
+            'event-view',
+
+            'participant-view',
+
+            'recruitment-view',
+
+            'member-view',
+
+            'general-view',
+
+            'profile-view',
+            'profile-create',
+            'profile-update',
+            'profile-delete',
+
+        ]);
+
         $roleGeneral = PermissionRole::create(['name' => 'general']);
         $roleGeneral->syncPermissions([
             'dashboard-view',
 
-            'post-view',
-            'post-create',
-            'post-update',
-            'post-delete',
+            'blog-view',
+            'blog-create',
+            'blog-update',
+            'blog-delete',
 
             'thread-view',
             'thread-create',
@@ -211,14 +254,14 @@ class UserSeeder extends Seeder
         $userSuperadministrator = User::factory()->create([
             'name' => 'Super Administrator',
             'gender' => 'L',
-            'birthplace' => 'Localhost',
+            'birthplace' => 'Palu',
             'date_of_birth' => now(),
 
-            'phone_number' => null,
+            'phone_number' => '01234678901',
             'email' => 'superadmin@mail.com',
             'password' => Hash::make('password'),
-            'address' => null,
-            
+            'address' => 'Palu',
+
             'division_id' => null,
             'position_id' => null,
         ]);
@@ -226,14 +269,29 @@ class UserSeeder extends Seeder
         $userAdministrator = User::factory()->create([
             'name' => 'Administrator',
             'gender' => 'L',
-            'birthplace' => 'Localhost',
+            'birthplace' => 'Palu',
             'date_of_birth' => now(),
 
-            'phone_number' => null,
+            'phone_number' => '01234678902',
             'email' => 'admin@mail.com',
             'password' => Hash::make('password'),
-            'address' => null,
-            
+            'address' => 'Palu',
+
+            'division_id' => null,
+            'position_id' => null,
+        ]);
+
+        $userMember = User::factory()->create([
+            'name' => 'Member',
+            'gender' => 'L',
+            'birthplace' => 'Palu',
+            'date_of_birth' => now(),
+
+            'phone_number' => '01234678903',
+            'email' => 'member@mail.com',
+            'password' => Hash::make('password'),
+            'address' => 'Palu',
+
             'division_id' => null,
             'position_id' => null,
         ]);
@@ -241,14 +299,14 @@ class UserSeeder extends Seeder
         $userGeneral = User::factory()->create([
             'name' => 'General',
             'gender' => 'L',
-            'birthplace' => 'Localhost',
+            'birthplace' => 'Palu',
             'date_of_birth' => now(),
 
-            'phone_number' => null,
+            'phone_number' => '01234678904',
             'email' => 'general@mail.com',
             'password' => Hash::make('password'),
-            'address' => null,
-            
+            'address' => 'Palu',
+
             'division_id' => null,
             'position_id' => null
         ]);
@@ -256,7 +314,7 @@ class UserSeeder extends Seeder
         # Assign roles
         $userSuperadministrator->assignRole($roleSuperadministrator);
         $userAdministrator->assignRole($roleAdministrator);
+        $userMember->assignRole($roleMember);
         $userGeneral->assignRole($roleGeneral);
-
     }
 }

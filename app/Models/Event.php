@@ -17,17 +17,11 @@ class Event extends Model
         'date_end',
         'location',
         'thumbnail',
-        'event_status',
-        'user_id'
+        'event_status'
     ];
 
     public function participants()
     {
         return $this->hasMany(Participant::class);
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
     }
 }
