@@ -196,8 +196,7 @@ class ThreadController extends Controller
         $request->validate([
             'title' => 'required|string|max:300',
             'body' => 'required|string',
-            'publication_status' => 'required|boolean',
-            'user_id' => 'required|numeric'
+            'publication_status' => 'required|boolean'
         ]);
     }
 }
