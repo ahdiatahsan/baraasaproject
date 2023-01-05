@@ -57,7 +57,7 @@
                     </div>
                     <div>
                         <label class="form-label">Isi Komentar</label>
-                        <textarea class="form-control" name="body" id="body" rows="10">{{ $comment->body }}</textarea>
+                        <textarea class="form-control" name="body" id="body" rows="10" required>{{ $comment->body }}</textarea>
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-end py-6">

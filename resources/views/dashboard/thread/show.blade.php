@@ -113,7 +113,7 @@
                 <input class="form-control" type="text" name="thread_id" value="{{ $thread->id }}" hidden>
                 <textarea name="body" class="form-control" rows="4" placeholder="Tulis komentarmu disini.."
                     maxlength="1000" data-kt-autosize="true"
-                    style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 150px;"></textarea>
+                    style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 150px;" required></textarea>
             </div>
             <div class="d-flex align-items-center justify-content-between py-2 mb-5">
                 <div class="text-primary fs-base fw-bold cursor-pointer"></div>
