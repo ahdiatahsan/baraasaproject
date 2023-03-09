@@ -21,6 +21,7 @@ Untuk aplikasi bagian mobile (Android) dapat diakses di [BaraAsaProject Mobile A
 
 - Laravel 8.65
 - PHP (7.3 | 8)
+- MySQL
 
 ## Screenshot
 
