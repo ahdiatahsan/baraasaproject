@@ -15,6 +15,7 @@ Untuk aplikasi bagian mobile (Android) dapat diakses di [BaraAsaProject Mobile A
 - Jurnal
 - Acara/Event (Termasuk Pendaftaran dan Sertifikat)
 - Keanggotaan (Termasuk Divisi dan Posisi)
+- Pengguna Aplikasi
 - Profil
 
 ## Spesifikasi
